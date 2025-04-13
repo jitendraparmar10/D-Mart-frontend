@@ -40,7 +40,7 @@ const categoryList =[
 
 const Nevbar = () => {
     return (
-        <nav className='bg-white shadow-md'>
+        <nav className='bg-white shadow-md overflow-x-clip'>
            
            {/* UPPER PART */}
            <div className='flex items-center justify-between border-b border-gray-300 '>

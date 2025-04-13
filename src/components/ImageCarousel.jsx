@@ -2,6 +2,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Link } from 'react-router';
+import { Autoplay } from 'swiper/modules';
 
 const images = [
     {
@@ -31,6 +32,10 @@ const ImageCarousel = () => {
             <Swiper
               spaceBetween={50}
               slidesPerView={1}
+              autoplay={{delay:2000}}
+              modules={
+                [Autoplay]
+              }
               onSlideChange={() => console.log('slide change')}
               onSwiper={(swiper) => console.log(swiper)}
             >
@@ -38,7 +43,7 @@ const ImageCarousel = () => {
                     images.map((image) =>(
                         <SwiperSlide key={image.id}>
                             <Link to={"/about"}>
-                             <img src={image.link} alt="carousel" className='w-screen sm:h-[45vh]'/>
+                             <img src={image.link} alt="carousel" className='w-screen sm:h-[45vh] object-center'/>
                             </Link>
                         </SwiperSlide>
                     ))
